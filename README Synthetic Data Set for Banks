@@ -1,0 +1,40 @@
+# Synthetic Customer Data Generator
+
+This repository contains a Python script (or Colab notebook) to generate synthetic customer data. The data simulates various aspects of a customer's profile, including demographics, income, banking relationship, credit & risk, and engagement.
+
+## Project Description
+
+The goal of this project is to create a realistic, yet synthetic, dataset of customer information that can be used for various analytical tasks such as customer segmentation, churn prediction, or credit risk modeling. The data generation process involves creating interdependencies between different features to mimic real-world scenarios.
+
+## Dataset Features
+
+The generated dataset includes the following columns:
+
+*   **Demographics**: `age`, `gender`, `marital_status`, `education_level`, `employment_status`
+*   **Income & Wealth**: `monthly_income`, `avg_monthly_balance`
+*   **Banking Relationship**: `account_tenure_years`, `num_products`
+*   **Credit & Risk**: `credit_score`, `has_credit_card`, `has_loan`, `loan_amount`, `loan_interest_rate`, `debt_to_income_ratio`
+*   **Engagement & Channels**: `digital_usage_score`, `branch_visits_per_year`
+*   **Default Risk**: `prob_default`, `default_flag` (binary indicator of default)
+
+## How to Use
+
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository_url>
+    cd <repository_name>
+    ```
+2.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Run the script/notebook:**
+    Execute the Python script or open and run the Colab notebook to generate the `synthetic_customer_data.csv` file.
+
+## Data Generation Logic
+
+The script uses `numpy` to generate random data for various features. Some features are dependent on others (e.g., `monthly_income` depends on `employment_status`, `credit_score` influences `has_credit_card` and `has_loan`). A `default_flag` is generated probabilistically based on `debt_to_income_ratio`, `credit_score`, and `loan_amount`.
+
+## Output
+
+The script outputs a CSV file named `synthetic_customer_data.csv` containing the generated customer data.
